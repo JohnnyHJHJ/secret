@@ -1,0 +1,79 @@
+{
+ "lessons": {
+  "assign": {},
+  "autoMeta": {
+   "auto/CS 11 Practice 11 Toolkit": {
+    "icon": "\ud83d\udcbb",
+    "parent": "fmwtxp5j00"
+   },
+   "auto/Code is Data: Interpreters, Metaprogramming and the Limits of Computation": {
+    "icon": "px:cd",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 17: Working With Many Kinds of Data": {
+    "icon": "\ud83c\udfaf",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 18: Trying Every Possibility": {
+    "icon": "\ud83e\udd8b",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 19: Making Programs Faster": {
+    "icon": "\u26a1",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 20: Splitting a Problem in Half": {
+    "icon": "\ud83d\udd2c",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 21: Remembering Answers": {
+    "icon": "\ud83e\udde0",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 22: Defaults, Names, and Type Hints": {
+    "icon": "\ud83c\udf08",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 24: Grouping Data Together": {
+    "icon": "\ud83d\ude80",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 25: File I/O, Contexts, Enums": {
+    "color": "blue",
+    "icon": "px:heart",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 26: Objects, Dataclasses, Classes": {
+    "icon": "\ud83e\udde9",
+    "parent": "fmwttscn81"
+   },
+   "auto/Lecture 27: Pattern Matching, Types, and Abstract Data Types": {
+    "icon": "\ud83c\udfae",
+    "parent": "fmwttscn81"
+   }
+  },
+  "folders": [
+   {
+    "color": "blue",
+    "icon": "\ud83d\udc31",
+    "id": "fmwttscn81",
+    "name": "Hope 3",
+    "parent": null
+   },
+   {
+    "color": "",
+    "icon": "px:terminal",
+    "id": "fmwtxp5j00",
+    "name": "CS 11 OJ and Mock",
+    "parent": null
+   }
+  ],
+  "hidden": []
+ },
+ "problems": {
+  "assign": {},
+  "folders": [],
+  "hidden": []
+ },
+ "updated": 1795562880.258251
+}

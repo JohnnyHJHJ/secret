@@ -1,0 +1,5 @@
+{
+  "title": "Lecture 27: Pattern Matching, Types, and Abstract Data Types",
+  "order": 27,
+  "description": "Practice match/case, the difference between types and classes, encapsulation, and the Stack, Queue and Set ADTs."
+}

@@ -1,0 +1,168 @@
+/* Streaks dashboard and Big-O panel. Uses only the colors from themes.css, so every theme works. */
+.rbtn .badge.fire { background: var(--accent); color: var(--accent-ink); }
+
+/* ---------- the desk ---------- */
+.sd-win { overflow: hidden; }
+.sd-scroll { flex: 1; min-height: 0; overflow: auto; padding: 16px; scrollbar-gutter: stable;
+  background-color: var(--bg);
+  background-image: radial-gradient(color-mix(in srgb, var(--rail-on) 13%, transparent) 1px, transparent 1px);
+  background-size: 5px 5px; }
+.sd-grid { width: 100%; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; align-content: start; }
+
+.sd-panel { display: flex; flex-direction: column; min-width: 0; min-height: 0; border: 2px solid var(--line2); background: var(--panel);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--rail) 30%, transparent), inset 1px 1px var(--hi); }
+.sd-body { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 12px 16px; }
+.sd-small { margin: 9px 0 0; color: var(--mute); font-size: 13px; line-height: 1.5; }
+.sd-tiny { margin: 7px 0 0; color: var(--mute); font-size: 12px; line-height: 1.5; }
+.sd-load { display: grid; gap: 14px; margin: auto; padding: 40px; width: min(420px, 100%); text-align: center; }
+
+.sd-hero-p { grid-column: span 12; }
+.sd-cal-p { grid-column: span 8; align-self: start; }
+.sd-side { grid-column: span 4; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.sd-badges-p { grid-column: span 12; }
+
+/* ---------- hero ---------- */
+.sd-hero { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; align-items: center; gap: 10px 18px; }
+.sd-medal { justify-self: center; }
+.sd-medal .px { animation: sd-flick 1.2s steps(2) infinite; }
+@keyframes sd-flick { 50% { transform: translateY(-3px) scaleY(1.04); } }
+.sd-hero:not(.done):not(.safe):not(.risk) .sd-medal .px { filter: grayscale(1); opacity: .5; animation: none; }
+.sd-hero.risk .sd-medal .px { filter: saturate(.55) brightness(.95); }
+.sd-num { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 108px; padding-inline: 8px; border-inline-end: 1px dashed var(--line2); }
+.sd-num b { color: var(--accent); font: 700 clamp(48px, 4.8vw, 72px)/.92 var(--mono); letter-spacing: -.03em; font-variant-numeric: tabular-nums;
+  text-shadow: 3px 3px 0 color-mix(in srgb, var(--accent) 20%, var(--panel)); }
+.sd-num span { color: var(--mute); font: 700 10px var(--mono); letter-spacing: .18em; text-transform: uppercase; }
+.sd-lead h2 { margin: 0 0 3px; font-size: 20px; line-height: 1.25; }
+.sd-lead p { margin: 0; color: var(--mute); font-size: 13.5px; line-height: 1.5; max-width: 58ch; }
+.sd-stats { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 11px; }
+.sd-stat { display: grid; gap: 1px; min-width: 80px; padding: 4px 9px; border: 1px solid var(--line2); background: var(--field); box-shadow: inset 1px 1px var(--lo), inset -1px -1px var(--hi); }
+.sd-stat b { font: 700 18px/1.2 var(--mono); }
+.sd-stat small { color: var(--mute); font: 700 9px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+
+/* level sits in the hero's open right side */
+.sd-lvlbox { display: flex; flex-direction: column; gap: 6px; justify-content: center; width: 188px; padding-inline-start: 18px; border-inline-start: 1px dashed var(--line2); }
+.sd-lvl-top { display: flex; align-items: baseline; gap: 7px; flex-wrap: wrap; }
+.sd-lvl-top b { font: 700 16px var(--mono); }
+.sd-lvl-top span { color: var(--accent); font-weight: 700; font-size: 13px; }
+.sd-lvlnote { color: var(--mute); font: 700 10px/1.45 var(--mono); letter-spacing: .02em; }
+
+/* ---------- today's goal ---------- */
+.sd-daily { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.sd-big { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+.sd-big b { font: 700 40px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.sd-big span { color: var(--mute); font: 700 18px var(--mono); }
+.sd-big small { flex-basis: 100%; margin-top: 4px; color: var(--mute); font-size: 12.5px; line-height: 1.4; }
+.sd-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--mute); }
+.sd-row small { font: 700 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.sd-row label { font-size: 12.5px; }
+.sd-hooray { display: flex; align-items: center; gap: 7px; margin-top: 2px; color: var(--accent); }
+
+/* ---------- restores ---------- */
+.sd-restore { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.sd-restore p { margin: 0; }
+.sd-restore .btn { align-self: flex-start; }
+.sd-hearts { display: flex; gap: 7px; }
+.sd-hearts .off .px { filter: grayscale(1); opacity: .28; }
+
+/* ---------- calendar ---------- */
+.sd-calnav { display: inline-flex; gap: 3px; }
+.sd-calwrap { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.sd-cal { flex: 1; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: auto; grid-auto-rows: minmax(46px, auto); gap: 5px; }
+.sd-dow { padding: 2px 0 3px; text-align: center; color: var(--mute); font: 700 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.sd-cell { position: relative; display: block; min-height: 0; padding: 6px 7px; overflow: hidden; border: 1px solid var(--line2); background: var(--panel2);
+  box-shadow: inset 1px 1px var(--hi), inset -1px -1px var(--lo); }
+.sd-cell.blank { border-color: transparent; background: none; box-shadow: none; }
+.sd-cell .n { position: relative; z-index: 2; font: 700 14px/1.1 var(--mono); }
+.sd-cell .marks { position: absolute; top: 6px; right: 7px; z-index: 2; display: flex; align-items: center; gap: 5px; }
+.sd-cell .star, .sd-legend .star { color: var(--warn); font-style: normal; font-size: 12px; }
+.sd-cell .slv, .sd-legend .slv { color: var(--ok); font-style: normal; font-size: 8.5px; letter-spacing: 1px; }
+.sd-cell .cnt { position: absolute; left: 7px; bottom: 4px; z-index: 2; color: var(--mute); font: 700 10.5px var(--mono); }
+.sd-cell .stamp { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; opacity: .92; }
+.sd-cell .stamp .px { width: 38px; height: 38px; }
+.sd-cell.future, .sd-cell.none { opacity: .55; }
+.sd-cell.active { border-color: var(--ok); background: var(--ok-soft); }
+.sd-cell.active .n::after { content: " ✓"; color: var(--ok); font-size: 12px; }
+.sd-cell.miss { border-color: var(--err); background: repeating-linear-gradient(135deg, var(--err-soft) 0 5px, transparent 5px 10px), var(--err-soft); }
+.sd-cell.restored { border-color: var(--accent); background: var(--accent-soft); }
+.sd-cell.now { opacity: 1; border: 2px solid var(--accent); padding: 5px 6px; background: var(--accent-soft); display: grid; place-items: center; }
+.sd-cell.now .n { z-index: 3; font-size: 18px; color: var(--rail-on); text-shadow: 1px 1px 0 color-mix(in srgb, var(--rail) 80%, #000), 0 0 3px color-mix(in srgb, var(--rail) 70%, #000); }
+.sd-cell.now .stamp { opacity: 1; }
+.sd-legend { display: flex; flex-wrap: wrap; gap: 5px 16px; color: var(--mute); font-size: 12px; }
+.sd-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sd-legend .sw { display: inline-block; width: 13px; height: 13px; border: 1px solid var(--line2); }
+.sd-legend .sw.active { background: var(--ok-soft); border-color: var(--ok); }
+.sd-legend .sw.rest { background: var(--panel2); }
+.sd-legend .sw.miss { background: var(--err-soft); border-color: var(--err); }
+.sd-legend .sw.restored { background: var(--accent-soft); border-color: var(--accent); }
+
+/* ---------- badges: earned tiles, then a quiet list of the locked ones ---------- */
+.sd-badges { display: flex; flex-direction: column; gap: 12px; }
+.sd-bprogress { display: flex; align-items: center; gap: 12px; }
+.sd-bprogress .fx-seg { flex: 1; height: 16px; }
+.sd-bprogress small { color: var(--mute); font: 700 10px var(--mono); letter-spacing: .08em; white-space: nowrap; }
+.sd-bgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); gap: 8px; }
+.sd-btile { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line2)); background: var(--accent-soft); }
+.sd-btile .ic { flex: none; display: grid; place-items: center; width: 30px; overflow: hidden; font-size: 23px; line-height: 1; }
+.sd-btile-txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.sd-btile-txt b { overflow: hidden; font-size: 13px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.sd-btile-txt small { color: var(--mute); font: 10.5px var(--mono); letter-spacing: .04em; }
+.sd-empty { display: flex; align-items: center; gap: 10px; margin: 0; padding: 12px; border: 1px dashed var(--line2); color: var(--mute); }
+.sd-blocked { display: flex; flex-direction: column; gap: 8px; }
+.sd-sub { display: flex; align-items: baseline; justify-content: space-between; color: var(--mute); font: 700 10px var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+.sd-bchips { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 4px 10px; }
+.sd-bchip { display: flex; align-items: center; gap: 7px; min-width: 0; padding: 3px 5px; overflow: hidden; border: 1px dotted transparent; color: var(--mute); font-size: 12.5px; white-space: nowrap; text-overflow: ellipsis; }
+.sd-bchip:hover { border-color: var(--line2); background: var(--panel2); color: var(--ink); }
+.sd-bchip .px { opacity: .65; }
+
+/* ---------- rules ---------- */
+.sd-rules { grid-column: span 12; padding: 9px 14px; border: 2px solid var(--line2); background: var(--panel); color: var(--mute); box-shadow: inset 1px 1px var(--hi); }
+.sd-rules summary { cursor: pointer; color: var(--ink); font: 700 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.sd-rules summary:hover { color: var(--accent); }
+.sd-rules li { margin: 6px 0; }
+
+/* Short app windows: keep the badge shelf above the fold. */
+@media (max-height: 860px) {
+  .sd-cal { grid-auto-rows: minmax(40px, auto); }
+  .sd-cell { padding: 4px 6px; }
+  .sd-cell .stamp .px { width: 30px; height: 30px; }
+  .sd-cell.now .n { font-size: 16px; }
+  .sd-legend { font-size: 11px; gap: 4px 13px; }
+}
+
+@media (max-width: 1180px) {
+  .sd-hero { grid-template-columns: auto auto minmax(0, 1fr); }
+  .sd-lvlbox { grid-column: 1 / -1; width: auto; padding: 10px 0 0; border-inline-start: 0; border-top: 1px dashed var(--line2); }
+}
+@media (max-width: 1120px) {
+  .sd-cal-p { grid-column: span 12; }
+  .sd-side { grid-column: span 12; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .sd-scroll { padding: 10px; }
+  .sd-grid { gap: 10px; }
+  .sd-side { grid-template-columns: 1fr; }
+  .sd-hero { grid-template-columns: auto 1fr; justify-items: start; }
+  .sd-medal { grid-row: span 2; }
+  .sd-num { min-width: 0; align-items: flex-start; border-inline-end: 0; padding-inline: 0; }
+  .sd-lead, .sd-lvlbox { grid-column: 1 / -1; }
+  .sd-cal { gap: 3px; grid-auto-rows: minmax(42px, 1fr); }
+  .sd-cell { padding: 4px 5px; }
+  .sd-cell .cnt, .sd-cell .marks, .sd-cell .stamp { display: none; }
+  .sd-cell.now { padding: 3px 4px; }
+  .sd-cell.now .n { color: var(--ink); text-shadow: none; }
+}
+
+/* Big-O panel in the Judge console */
+.cx-plain { margin: 10px 0 0; max-width: 62ch; }
+.cx-note { margin: 10px 0 0; color: var(--mute); font-size: 13px; max-width: 70ch; }
+.cx-chart { width: 100%; max-width: 640px; margin-top: 14px; display: block; }
+.cx-grid { stroke: var(--line); stroke-width: 1; }
+.cx-tick { fill: var(--mute); font: 11px var(--ui); }
+.cx-fit { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.cx-dot { fill: var(--ok); stroke: var(--panel); stroke-width: 1.5; }
+.cx-fits { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; font-size: 13px; }
+.cx-raw { margin-top: 12px; color: var(--mute); }
+.cx-raw summary { cursor: pointer; }
+.cx-table { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 4px 18px; margin-top: 8px; font: 12.5px var(--mono); }
+.cx-table div { display: flex; justify-content: space-between; }

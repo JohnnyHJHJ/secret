@@ -1,0 +1,412 @@
+/* =====================================================================
+   THEMES: every color in the app lives in this file.
+   To add a theme: copy one block, change the name after data-theme=,
+   change the colors, then add [name, "Label"] to web/themes.js.
+   Keep every variable name; only change the values.
+   ===================================================================== */
+
+/* Dear OS: a soft late-90s desktop workspace. Reworked to be less glaring:
+   the sky-blue desktop is muted, the paper is warm and dim, and the code
+   terminal is now a light "paper" surface too. */
+html[data-theme="dear"] {
+  color-scheme: light;
+  --bg: #a9bcc8;
+  --panel: #eae6de;
+  --panel2: #e0dacf;
+  --side: #dce4e3;
+  --rail: #8399a7;
+  --line: #b3ab9f;
+  --line2: #6f6a62;
+  --ink: #2b2a28;
+  --mute: #4d4943;
+  --rail-ink: #1b2830;
+  --rail-on: #f7f4ec;
+  --accent: #9e4f70;
+  --accent-ink: #fbf6f0;
+  --accent-soft: #ecd2dc;
+  --ok: #43704f;
+  --ok-soft: #d5e4d7;
+  --on-ok: #f0f6f1;
+  --err: #a44e59;
+  --err-soft: #eed4d6;
+  --warn: #8a6420;
+  --warn-soft: #ecdfc0;
+  --code-bg: #e9e5dc;
+  --code-ink: #33363c;
+  --code-cur: #ded9cd;
+  --guide: #cdc7ba;
+  --ln: #a09a8c;
+  --ln-cur: #4f4b44;
+  --match: #d5c9a8;
+  --spoiler: #c9c2b3;
+  --t-k: #7d4f92;
+  --t-kd: #7d4f92;
+  --t-s: #3f6b30;
+  --t-c: #7a7263;
+  --t-n: #9a5222;
+  --t-f: #2a6b6e;
+  --t-k2: #855c16;
+  --t-b: #355f94;
+  --t-call: #355f94;
+  --t-d: #95512b;
+  --t-self: #9e4650;
+  --t-op: #9e4650;
+  --t-param: #9a5222;
+  --t-dunder: #355f94;
+}
+
+/* Dear OS Dark: the same soft desktop at night — deep slate-blue surfaces,
+   dusty rose accent, warm muted syntax. */
+html[data-theme="dear-dark"] {
+  color-scheme: dark;
+  /* surfaces */
+  --bg: #262c36;
+  --panel: #2d343f;
+  --panel2: #343c48;
+  --side: #232932;
+  --rail: #1b2028;
+  --line: #3b4450;
+  --line2: #4c5764;
+  /* text */
+  --ink: #dfe3ea;
+  --mute: #a3adba;
+  --rail-ink: #a3adba;
+  --rail-on: #f5f2ec;
+  /* accent + status */
+  --accent: #d98aa6;  --accent-ink: #2a1c22;  --accent-soft: #46333c;
+  --ok: #93c99a;      --ok-soft: #2f4034;     --on-ok: #17241a;
+  --err: #ec8f97;     --err-soft: #4a3236;
+  --warn: #e6c273;    --warn-soft: #453f2c;
+  /* code editor + code blocks */
+  --code-bg: #2b3038;   --code-ink: #dfe3ea;
+  --code-cur: #353c46;
+  --guide: #414a56;
+  --ln: #6b7583;
+  --ln-cur: #b9c2ce;
+  --match: #4d5a68;
+  --spoiler: #1c2128;
+  /* syntax colors */
+  --t-k: #c594c5;
+  --t-kd: #c594c5;
+  --t-s: #99c794;
+  --t-c: #8893a0;
+  --t-n: #f0a06a;
+  --t-f: #6fbcbb;
+  --t-k2: #e6c273;
+  --t-b: #7aa7d6;
+  --t-call: #7aa7d6;
+  --t-d: #e8a888;
+  --t-self: #e88a90;
+  --t-op: #e88a90;
+  --t-param: #f0a06a;
+  --t-dunder: #7aa7d6;
+}
+
+/* Dark: warm slate with a muted amber accent, softened to match Dear OS */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  /* surfaces */
+  --bg: #2b3037;        /* page background behind cards */
+  --panel: #323840;     /* cards, top bars, lesson activities */
+  --panel2: #394049;    /* raised or hovered surfaces, table headers */
+  --side: #282d33;      /* list panel on the left */
+  --rail: #22262b;      /* narrow icon bar on the far left */
+  --line: #404850;      /* thin borders */
+  --line2: #4f5a65;     /* stronger borders, scrollbars */
+  /* text */
+  --ink: #dfe2e6;       /* main text */
+  --mute: #a7adb5;      /* secondary text */
+  --rail-ink: #a7adb5;  /* icon bar text */
+  --rail-on: #f4f4f2;   /* icon bar text when active or hovered */
+  /* accent + status */
+  --accent: #dcb072;  --accent-ink: #2b2417;  --accent-soft: #4a4536;
+  --ok: #9cc596;      --ok-soft: #37473e;     --on-ok: #1f2e22;
+  --err: #ea8a90;     --err-soft: #4d363b;
+  --warn: #e8c47a;    --warn-soft: #4b4433;
+  /* code editor + code blocks */
+  --code-bg: #2f363f;   --code-ink: #dfe2e6;
+  --code-cur: #3a4149;  /* current line highlight */
+  --guide: #464e58;     /* indent guides */
+  --ln: #737b85;        /* line numbers */
+  --ln-cur: #c4c9d0;    /* current line number */
+  --match: #5c6672;     /* matching bracket highlight */
+  --spoiler: #1d2127;   /* hidden hint bars */
+  /* syntax colors */
+  --t-k: #c594c5;       /* keywords: if, for, return */
+  --t-kd: #c594c5;      /* def, class */
+  --t-s: #99c794;       /* strings */
+  --t-c: #8893a0;       /* comments */
+  --t-n: #f0a06a;       /* numbers */
+  --t-f: #6fbcbb;       /* function names being defined */
+  --t-k2: #e6c273;      /* class names */
+  --t-b: #7aa7d6;       /* built-in functions: print, len */
+  --t-call: #7aa7d6;    /* function calls */
+  --t-d: #e8a888;       /* decorators */
+  --t-self: #e88a90;    /* self */
+  --t-op: #e88a90;      /* operators: = + - */
+  --t-param: #f0a06a;   /* parameters in def lines */
+  --t-dunder: #7aa7d6;  /* __init__ and friends */
+}
+
+/* Night: VS Code "Tokyo Night" inspired, with a slightly muted lilac accent */
+html[data-theme="night"] {
+  color-scheme: dark;
+  --bg: #1a1b26;        /* page background behind cards */
+  --panel: #1f2335;     /* cards, top bars, lesson activities */
+  --panel2: #24283b;    /* raised or hovered surfaces, table headers */
+  --side: #16161e;      /* list panel on the left */
+  --rail: #12131a;      /* narrow icon bar on the far left */
+  --line: #2f3549;      /* thin borders */
+  --line2: #414868;     /* stronger borders, scrollbars */
+  --ink: #c0caf5;       /* main text */
+  --mute: #8a93b8;      /* secondary text */
+  --rail-ink: #8a93b8;  /* icon bar text */
+  --rail-on: #c0caf5;   /* icon bar text when active or hovered */
+  --accent: #b39be0;  --accent-ink: #1a1b26;  --accent-soft: #302c44;
+  --ok: #9ece6a;      --ok-soft: #263a2a;     --on-ok: #16210f;
+  --err: #f7768e;     --err-soft: #3b2230;
+  --warn: #e0af68;    --warn-soft: #3a3220;
+  --code-bg: #1e2030;   --code-ink: #c0caf5;
+  --code-cur: #292e42;
+  --guide: #2f3549;
+  --ln: #4a5273;
+  --ln-cur: #c0caf5;
+  --match: #3b4261;
+  --spoiler: #15161e;
+  --t-k: #bb9af7;
+  --t-kd: #bb9af7;
+  --t-s: #9ece6a;
+  --t-c: #6e78a8;
+  --t-n: #ff9e64;
+  --t-f: #7aa2f7;
+  --t-k2: #e0af68;
+  --t-b: #7dcfff;
+  --t-call: #7aa2f7;
+  --t-d: #e0af68;
+  --t-self: #f7768e;
+  --t-op: #89ddff;
+  --t-param: #e0af68;
+  --t-dunder: #7aa2f7;
+}
+
+/* Light: warm, dim paper (not bright white) */
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #e6e1d6;  --panel: #f1ede3;  --panel2: #e9e4d8;  --side: #ddd7c9;  --rail: #38332d;
+  --line: #d5cebe;  --line2: #c1b9a6;
+  --ink: #373229;  --mute: #665f4f;  --rail-ink: #b3aa98;  --rail-on: #fbf7ec;
+  --accent: #96651f;  --accent-ink: #fbf6ea;  --accent-soft: #e9dabc;
+  --ok: #4b7a48;  --ok-soft: #d8e4cc;  --on-ok: #17261a;
+  --err: #a74f49;  --err-soft: #eed6cf;
+  --warn: #8f6619;  --warn-soft: #eadeba;
+  --code-bg: #ece7db;  --code-ink: #383b42;  --code-cur: #e1dac8;  --guide: #d2cab7;
+  --ln: #a39b88;  --ln-cur: #5a5446;  --match: #cdbf9e;  --spoiler: #3e392f;
+  --t-k: #86579b;  --t-kd: #86579b;  --t-s: #4b7a38;  --t-c: #968f7e;  --t-n: #ad5e28;  --t-f: #2c7a7e;
+  --t-k2: #94690f;  --t-b: #3a6ca4;  --t-call: #3a6ca4;  --t-d: #a25d3a;  --t-self: #ad4850;
+  --t-op: #ad4850;  --t-param: #ad5e28;  --t-dunder: #3a6ca4;
+}
+
+/* Sepia: warm aged-paper look for long reading sessions */
+html[data-theme="sepia"] {
+  color-scheme: light;
+  --bg: #e8dcc3;        /* page background behind cards */
+  --panel: #f0e6d2;     /* cards, top bars, lesson activities */
+  --panel2: #e3d6bb;    /* raised or hovered surfaces, table headers */
+  --side: #dccdb0;      /* list panel on the left */
+  --rail: #453a2c;      /* narrow icon bar on the far left */
+  --line: #cfc0a3;      /* thin borders */
+  --line2: #b9a98a;     /* stronger borders, scrollbars */
+  --ink: #3c3324;       /* main text */
+  --mute: #564a38;      /* secondary text */
+  --rail-ink: #b8a98f;  /* icon bar text */
+  --rail-on: #f7efdf;   /* icon bar text when active or hovered */
+  --accent: #8a5a24;  --accent-ink: #fbf3e2;  --accent-soft: #e6d3ae;
+  --ok: #547a45;      --ok-soft: #d9e4c8;     --on-ok: #1c2917;
+  --err: #a3524a;     --err-soft: #eed6cc;
+  --warn: #8a641c;    --warn-soft: #ecdfb9;
+  --code-bg: #efe4cd;   --code-ink: #3a3226;
+  --code-cur: #e4d7bc;
+  --guide: #d2c3a6;
+  --ln: #a4947a;
+  --ln-cur: #5e5140;
+  --match: #d8c6a4;
+  --spoiler: #453a2c;
+  --t-k: #775484;
+  --t-kd: #775484;
+  --t-s: #476832;
+  --t-c: #7e7058;
+  --t-n: #91501f;
+  --t-f: #2a6965;
+  --t-k2: #7b5712;
+  --t-b: #3d6494;
+  --t-call: #3d6494;
+  --t-d: #8d512c;
+  --t-self: #a4474f;
+  --t-op: #a4474f;
+  --t-param: #91501f;
+  --t-dunder: #3d6494;
+}
+
+/* Pink: soft rosy light theme, gentle and warm */
+html[data-theme="pink"] {
+  color-scheme: light;
+  --bg: #f2e4e9;        /* page background behind cards */
+  --panel: #f9eef2;     /* cards, top bars, lesson activities */
+  --panel2: #f0dfe6;    /* raised or hovered surfaces, table headers */
+  --side: #e8d5dd;      /* list panel on the left */
+  --rail: #4a3a44;      /* narrow icon bar on the far left */
+  --line: #ddc6cf;      /* thin borders */
+  --line2: #c9aeb9;     /* stronger borders, scrollbars */
+  --ink: #3d2a33;       /* main text */
+  --mute: #5e4652;      /* secondary text */
+  --rail-ink: #b9a3ad;  /* icon bar text */
+  --rail-on: #fbeef3;   /* icon bar text when active or hovered */
+  --accent: #9e5573;  --accent-ink: #fdf2f6;  --accent-soft: #eccbd8;
+  --ok: #4f7a52;      --ok-soft: #d8e6d3;     --on-ok: #172617;
+  --err: #a34b52;     --err-soft: #efd2d2;
+  --warn: #8a6420;    --warn-soft: #ecdfc0;
+  --code-bg: #f7e9ee;   --code-ink: #3a2b33;
+  --code-cur: #eedae2;
+  --guide: #ddc9d2;
+  --ln: #a98e9b;
+  --ln-cur: #5c4551;
+  --match: #d9bcc9;
+  --spoiler: #4a3a44;
+  --t-k: #8a4d7a;
+  --t-kd: #8a4d7a;
+  --t-s: #466f39;
+  --t-c: #8a7480;
+  --t-n: #9a5226;
+  --t-f: #2e7377;
+  --t-k2: #855c16;
+  --t-b: #3d6b9e;
+  --t-call: #3d6b9e;
+  --t-d: #96532f;
+  --t-self: #a84b55;
+  --t-op: #a84b55;
+  --t-param: #9a5226;
+  --t-dunder: #3d6b9e;
+}
+
+/* Rose: dark pink/plum theme, cozy and low-glare */
+html[data-theme="rose"] {
+  color-scheme: dark;
+  --bg: #2b2328;        /* page background behind cards */
+  --panel: #342a30;     /* cards, top bars, lesson activities */
+  --panel2: #3c3138;    /* raised or hovered surfaces, table headers */
+  --side: #271f24;      /* list panel on the left */
+  --rail: #1f181c;      /* narrow icon bar on the far left */
+  --line: #4a3c44;      /* thin borders */
+  --line2: #5c4a54;     /* stronger borders, scrollbars */
+  --ink: #eddde5;       /* main text */
+  --mute: #b39aa6;      /* secondary text */
+  --rail-ink: #b39aa6;  /* icon bar text */
+  --rail-on: #fbeef4;   /* icon bar text when active or hovered */
+  --accent: #d98fa8;  --accent-ink: #2b1a22;  --accent-soft: #4a303c;
+  --ok: #9ecf9a;      --ok-soft: #37483f;     --on-ok: #1f2e22;
+  --err: #f07f8b;     --err-soft: #4d363c;
+  --warn: #f2c46b;    --warn-soft: #4b4432;
+  --code-bg: #2c2429;   --code-ink: #eddde5;
+  --code-cur: #3a2f36;
+  --guide: #4a3c44;
+  --ln: #7e6874;
+  --ln-cur: #d7c3cd;
+  --match: #634c58;
+  --spoiler: #1b1519;
+  --t-k: #d79ac0;
+  --t-kd: #d79ac0;
+  --t-s: #9ecf9a;
+  --t-c: #917a87;
+  --t-n: #f0a070;
+  --t-f: #6fc0c4;
+  --t-k2: #f2c46b;
+  --t-b: #82aee0;
+  --t-call: #82aee0;
+  --t-d: #e8a08a;
+  --t-self: #f07f8b;
+  --t-op: #f07f8b;
+  --t-param: #f0a070;
+  --t-dunder: #82aee0;
+}
+
+/* Forest: deep mossy green dark theme, calm and organic */
+html[data-theme="forest"] {
+  color-scheme: dark;
+  --bg: #202b24;        /* page background behind cards */
+  --panel: #27352c;     /* cards, top bars, lesson activities */
+  --panel2: #2e3e34;    /* raised or hovered surfaces, table headers */
+  --side: #1c2620;      /* list panel on the left */
+  --rail: #161f1a;      /* narrow icon bar on the far left */
+  --line: #3a4a3f;      /* thin borders */
+  --line2: #4a5d50;     /* stronger borders, scrollbars */
+  --ink: #d6e4d8;       /* main text */
+  --mute: #9db3a1;      /* secondary text */
+  --rail-ink: #9db3a1;  /* icon bar text */
+  --rail-on: #eaf5eb;   /* icon bar text when active or hovered */
+  --accent: #9ac9a0;  --accent-ink: #16241a;  --accent-soft: #2c4634;
+  --ok: #a3d99f;      --ok-soft: #2f4430;     --on-ok: #172617;
+  --err: #e9918f;     --err-soft: #4a3030;
+  --warn: #e0c06a;    --warn-soft: #45402a;
+  --code-bg: #22302a;   --code-ink: #d6e4d8;
+  --code-cur: #2e3e34;
+  --guide: #3a4a3f;
+  --ln: #6b8474;
+  --ln-cur: #b9cdbd;
+  --match: #4d6455;
+  --spoiler: #141c17;
+  --t-k: #b8a1d9;
+  --t-kd: #b8a1d9;
+  --t-s: #9ecf8f;
+  --t-c: #7d9585;
+  --t-n: #e8a96f;
+  --t-f: #6fc3bf;
+  --t-k2: #e0c06a;
+  --t-b: #7fb0de;
+  --t-call: #7fb0de;
+  --t-d: #e8a98a;
+  --t-self: #e9918f;
+  --t-op: #e9918f;
+  --t-param: #e8a96f;
+  --t-dunder: #7fb0de;
+}
+
+/* Ocean: deep blue-teal dark theme with soft cyan accents */
+html[data-theme="ocean"] {
+  color-scheme: dark;
+  --bg: #1d2a33;        /* page background behind cards */
+  --panel: #24333e;     /* cards, top bars, lesson activities */
+  --panel2: #2a3c48;    /* raised or hovered surfaces, table headers */
+  --side: #19252d;      /* list panel on the left */
+  --rail: #131d24;      /* narrow icon bar on the far left */
+  --line: #354852;      /* thin borders */
+  --line2: #455c68;     /* stronger borders, scrollbars */
+  --ink: #d3e3ec;       /* main text */
+  --mute: #98b0bd;      /* secondary text */
+  --rail-ink: #98b0bd;  /* icon bar text */
+  --rail-on: #e8f4fa;   /* icon bar text when active or hovered */
+  --accent: #7bbcc6;  --accent-ink: #0f2228;  --accent-soft: #2a4550;
+  --ok: #93d3a8;      --ok-soft: #2a4232;     --on-ok: #152419;
+  --err: #ec8f93;     --err-soft: #462d30;
+  --warn: #e6c26d;    --warn-soft: #443d27;
+  --code-bg: #1f2e38;   --code-ink: #d3e3ec;
+  --code-cur: #2a3c48;
+  --guide: #354852;
+  --ln: #657e8b;
+  --ln-cur: #b6cdd8;
+  --match: #45616e;
+  --spoiler: #101a20;
+  --t-k: #c2a5e0;
+  --t-kd: #c2a5e0;
+  --t-s: #9ed3a2;
+  --t-c: #7a95a3;
+  --t-n: #f0a878;
+  --t-f: #6fc7c9;
+  --t-k2: #e6c26d;
+  --t-b: #86b5e6;
+  --t-call: #86b5e6;
+  --t-d: #eaa88c;
+  --t-self: #ec8f93;
+  --t-op: #ec8f93;
+  --t-param: #f0a878;
+  --t-dunder: #86b5e6;
+}

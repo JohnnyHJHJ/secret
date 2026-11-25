@@ -1,0 +1,5 @@
+{
+  "title": "Lecture 26: Objects, Dataclasses, Classes",
+  "order": 26,
+  "description": "What objects are, how dataclasses bundle values, and how classes let you write your own constructors."
+}

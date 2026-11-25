@@ -1,0 +1,5 @@
+{
+  "title": "Code is Data: Interpreters, Metaprogramming and the Limits of Computation",
+  "order": 10,
+  "description": "Learn how programs can read, parse, run and reason about other programs, and why some questions about programs can never be answered."
+}

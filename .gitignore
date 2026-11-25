@@ -1,0 +1,32 @@
+# --- personal data and local state (not part of the project) ---
+config.json
+progress.json
+lessons_state.json
+streaks.json
+user_code/
+
+# --- local browser profile (hundreds of MB, private session data) ---
+.app_profile/
+
+# --- backups and old copies ---
+backup_*/
+web_backup_before_redesign/
+*.bad
+*.tmp
+
+# --- Python / OS / editor junk ---
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- local screenshots and scratch tests ---
+completion-*.png
+completion-*.jpg
+_tmp_*
+_uitest/
